@@ -5,20 +5,22 @@
   <title>Day Forecast</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script defer>
-    document.addEventListener('DOMContentLoaded', () => {
-      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-      const dayTag = document.getElementById('current-day')
-      const currentDay = new Date()
-
-      dayIndex = currentDay.getDay();
-      dayTag.textContent = days[dayIndex]
-    })
-  </script>
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  Today is: <span id="current-day" />
+  <main>
+    <h1>Date forecast</h1>
+    <p>Your handy helper for knowing what day it is today</p>
+    <div class="forecast">
+      <p class="day-title">Today is</p>
+      <p id="current-day" />
+      <p class="day-title">Upcoming days</p>
+      <p class="upcoming-days" />
+      <p class="upcoming-days" />
+    </div>
+  </main>
 </body>
 
 </html>

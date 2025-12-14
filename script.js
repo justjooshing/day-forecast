@@ -1,17 +1,9 @@
-const days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+import { days } from "./constants.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const dayTag = document.getElementById("current-day");
   const currentDay = new Date();
 
-  dayIndex = currentDay.getDay();
+  const dayIndex = currentDay.getDay();
   dayTag.textContent = days[dayIndex];
 });

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Day Forecast</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+      const dayTag = document.getElementById('current-day')
+      const currentDay = new Date()
+
+      dayIndex = currentDay.getDay();
+      dayTag.textContent = days[dayIndex]
+    })
+  </script>
+</head>
+
+<body>
+  Today is: <span id="current-day" />
+</body>
+
+</html>

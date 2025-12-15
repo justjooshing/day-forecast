@@ -1,0 +1,21 @@
+{
+  "name": "day-forecast",
+  "version": "1.0.0",
+  "description": "Find out which day it is",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "stripe": "^12.0.0"
+  },
+  "devDependencies": {
+    "vite": "^7.3.0"
+  },
+  "keywords": [],
+  "author": "Joshua Mertens",
+  "license": "ISC"
+}

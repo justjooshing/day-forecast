@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Day Forecast</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" defer src="initialise-page.js"></script>
+  <script type="module" defer src="handle-upgrade.js"></script>
+  <script type="module" defer src="handle-successful-payment.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <h1>Day forecast</h1>
+    <p>Your handy helper for knowing what day it is today</p>
+    <div class="forecast">
+      <p class="day-title">Today is</p>
+      <p class="unlocked-days" id="current-day" />
+      <p class="day-title">Two day forecast</p>
+      <button class="locked-days">Hidden</button>
+      <button class="locked-days">Hidden</button>
+      <button class="upgrade" id="upgrade-btn">Upgrade this session for $1</button>
+      <dialog>
+        <p class="locked-feature">This feature is locked. Please upgrade to premium to unlock upcoming days!</p>
+        <button>Close</button>
+      </dialog>
+    </div>
+  </main>
+</body>
+
+</html>

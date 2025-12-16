@@ -8,6 +8,7 @@
   <script type="module" defer src="initialise-page.js"></script>
   <script type="module" defer src="handle-upgrade.js"></script>
   <script type="module" defer src="handle-successful-payment.js"></script>
+  <script type="module" defer src="console.js"></script>
   <script src="https://js.stripe.com/v3/"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -22,16 +23,16 @@
       <p class="day-title">Two day forecast</p>
       <button class="locked-days">Locked &#x1F512;</button>
       <button class="locked-days">Locked &#x1F512;</button>
+      <dialog>
+        <p class="locked-feature">This feature is locked. Please upgrade to premium to unlock a two day forecast!</p>
+        <button>Close</button>
+      </dialog>
     </section>
     <section class="upgrades">
       <p>Unlock a two day forecast for this session</p>
       <button class="upgrade" id="upgrade-btn">Unlock a two day forecast</button>
       <p class="upgrade-note">*Upgrading unlocks the next two days for this session only.</p>
       <p class="error hidden">Something went wrong</p>
-      <dialog>
-        <p class="locked-feature">This feature is locked. Please upgrade to premium to unlock upcoming days!</p>
-        <button>Close</button>
-      </dialog>
     </section>
   </main>
 </body>

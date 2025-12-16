@@ -1,7 +1,7 @@
 import { days } from "./constants.js";
 
 const updateUIForSuccessfulPayment = () => {
-  const upgradeButton = document.getElementById("upgrade-btn");
+  const upgradeButton = document.querySelector(".upgrades");
   upgradeButton.classList.add("hidden");
 
   const buttons = document.querySelectorAll(".locked-days");
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (sessionId) {
     sessionStorage.setItem("session_id", sessionId);
+    window.history.replaceState({}, document.title, "/");
   }
 
   const storedSessionId = sessionStorage.getItem("session_id");

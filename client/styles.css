@@ -18,6 +18,13 @@ main {
   --font-size-small: 16px;
   --font-size-medium: 24px;
   --font-size-large: 36px;
+
+  --color-secondary: white;
+  --bg-color-error: red;
+  --bg-color-primary: blue;
+  --bg-color-success: green;
+  --bg-color-locked: grey;
+  --bg-color-notice: grey;
 }
 
 h1 {
@@ -48,36 +55,19 @@ button {
   }
 
   .unlocked-days {
-    font-size: var(--font-size-large);
     font-weight: 600;
-    color: blue;
+    color: var(--bg-color-primary);
     font-size: var(--font-size-medium);
   }
 
+  #current-day {
+    font-size: var(--font-size-large);
+  }
+
   .locked-days {
-    background-color: grey;
+    background-color: var(--bg-color-locked);
     border-radius: 4px;
-    color: white;
-  }
-}
-
-.upgrades {
-  .upgrade {
-    margin-top: 16px;
-    background-color: green;
-    border-radius: 4px;
-    color: white;
-  }
-
-  .upgrade-note {
-    font-size: 14px;
-    color: gray;
-    margin-top: 4px;
-  }
-
-  .error {
-    color: red;
-    margin-top: 8px;
+    color: var(--color-secondary);
   }
 
   dialog {
@@ -87,18 +77,38 @@ button {
 
     .locked-feature {
       font-size: var(--font-size-medium);
-      color: red;
+      color: var(--bg-color-error);
       text-align: center;
     }
 
     button {
       margin-top: 16px;
-      background-color: blue;
+      background-color: var(--bg-color-primary);
       border-radius: 4px;
       width: 100%;
-      color: white;
+      color: var(--color-secondary);
       cursor: pointer;
     }
+  }
+}
+
+.upgrades {
+  .upgrade {
+    margin-top: 16px;
+    background-color: var(--bg-color-success);
+    border-radius: 4px;
+    color: var(--color-secondary);
+  }
+
+  .upgrade-note {
+    font-size: 14px;
+    color: var(--bg-color-notice);
+    margin-top: 4px;
+  }
+
+  .error {
+    color: var(--bg-color-error);
+    margin-top: 8px;
   }
 }
 

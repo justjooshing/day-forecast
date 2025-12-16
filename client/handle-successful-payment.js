@@ -8,7 +8,6 @@ const updateUIForSuccessfulPayment = () => {
   buttons.forEach((button, i) => {
     button.classList.remove("locked-days");
     button.classList.add("unlocked-days");
-    button.classList.add("upcoming");
     button.textContent = days[(new Date().getDay() + i + 1) % 7];
 
     const p = document.createElement("p");

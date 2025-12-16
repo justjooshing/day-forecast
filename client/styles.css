@@ -15,6 +15,7 @@ main {
   align-items: center;
   height: 100%;
 
+  --font-size-small: 16px;
   --font-size-medium: 24px;
   --font-size-large: 36px;
 }
@@ -23,68 +24,82 @@ h1 {
   margin: 1em 0em;
 }
 
-.forecast {
+section {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin: 0;
+  margin: 16px 0px;
   align-items: center;
   justify-content: center;
-}
-
-.day-title {
-  padding-top: 24px;
-}
-
-.unlocked-days {
-  font-size: var(--font-size-large);
-  font-weight: 600;
-  color: blue;
-}
-
-.upcoming {
-  font-size: var(--font-size-medium);
-}
-
-.locked-days {
-  background-color: grey;
-  border-radius: 4px;
   width: 100%;
-  height: var(--font-size-medium);
-  color: white;
+}
+
+button {
+  font-size: var(--font-size-small);
+  padding: 8px;
+  border: none;
+  width: 200px;
   cursor: pointer;
 }
 
-dialog {
-  margin: 48px;
-  align-self: center;
-  justify-self: center;
+.free {
+  .day-title {
+    padding-top: 24px;
+  }
 
-  .locked-feature {
+  .unlocked-days {
+    font-size: var(--font-size-large);
+    font-weight: 600;
+    color: blue;
     font-size: var(--font-size-medium);
-    color: red;
-    text-align: center;
   }
 
-  button {
-    margin-top: 16px;
-    background-color: blue;
+  .locked-days {
+    background-color: grey;
     border-radius: 4px;
-    width: 100%;
-    height: var(--font-size-medium);
     color: white;
-    cursor: pointer;
   }
 }
 
-.upgrade {
-  margin-top: 16px;
-  background-color: green;
-  border-radius: 4px;
-  width: 100%;
-  height: var(--font-size-medium);
-  color: white;
-  cursor: pointer;
+.upgrades {
+  .upgrade {
+    margin-top: 16px;
+    background-color: green;
+    border-radius: 4px;
+    color: white;
+  }
+
+  .upgrade-note {
+    font-size: 14px;
+    color: gray;
+    margin-top: 4px;
+  }
+
+  .error {
+    color: red;
+    margin-top: 8px;
+  }
+
+  dialog {
+    margin: 48px;
+    align-self: center;
+    justify-self: center;
+
+    .locked-feature {
+      font-size: var(--font-size-medium);
+      color: red;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 16px;
+      background-color: blue;
+      border-radius: 4px;
+      width: 100%;
+      color: white;
+      cursor: pointer;
+    }
+  }
 }
 
 .hidden {

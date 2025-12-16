@@ -19,7 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
       await stripe.redirectToCheckout({ sessionId: id });
     } catch (err) {
       console.log("confirm payment", err);
-      alert("Unable to start checkout. Ensure the server is running.");
+      setTimeout(() => {
+        document.querySelector(".error").classList.add("hidden");
+      }, 2000);
+      document.querySelector(".error").classList.remove("hidden");
     }
   });
 });

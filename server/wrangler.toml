@@ -8,6 +8,6 @@ CLIENT_URL = "https://www.day-forecast.com"
 # IMPORTANT: no workers.dev route
 workers_dev = false
 
-routes = [
-   { pattern = "www.day-forecast.com/api/*", zone_name = "day-forecast.com" }
-]
+[[routes]]
+pattern = "www.day-forecast.com/api/*"
+zone_name = "day-forecast.com"

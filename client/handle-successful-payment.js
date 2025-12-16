@@ -1,4 +1,4 @@
-import { days, apiUrl } from "./constants.js";
+import { days } from "./constants.js";
 
 const updateUIForSuccessfulPayment = () => {
   const upgradeButton = document.getElementById("upgrade-btn");
@@ -35,9 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   if (sessionId) {
-    const res = await fetch(
-      `${apiUrl}/checkout-session?session_id=${sessionId}`,
-    );
+    const res = await fetch(`/api/checkout-session?session_id=${sessionId}`);
     const data = await res.json();
 
     if (data.success) {

@@ -1,0 +1,13 @@
+name = "day-forecast-api"
+main = "index.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+CLIENT_URL = "https://www.day-forecast.com"
+
+# IMPORTANT: no workers.dev route
+workers_dev = false
+
+routes = [
+   { pattern = "www.day-forecast.com/api/*", zone_name = "day-forecast.com" }
+]

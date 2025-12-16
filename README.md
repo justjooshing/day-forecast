@@ -27,5 +27,5 @@ npm run start
 
 Notes:
 
-- Server runs on port `4242` by default. Frontend uses `http://localhost:5173` (live-server).
+- Server runs on port `8787` by default. Frontend uses `http://localhost:5173` (live-server).
 - Configure a price in your Stripe dashboard and set `PRICE_ID` accordingly.

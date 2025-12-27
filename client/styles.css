@@ -1,117 +1,162 @@
+:root {
+  --bg: linear-gradient(180deg, #eef2ff 0%, #f8fafc 100%);
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --success: #10b981;
+  --error: #ef4444;
+  --radius: 12px;
+  --glass: rgba(255, 255, 255, 0.6);
+  --max-width: 720px;
+}
+
+* {
+  box-sizing: border-box;
+}
 html,
 body {
   height: 100%;
   margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+    "Helvetica Neue", Arial;
 }
-
-p {
-  margin: 0;
+body {
+  background: var(--bg);
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
 }
 
 main {
   display: flex;
-  flex: 1;
   flex-direction: column;
-  align-items: center;
-  height: 100%;
-
-  --font-size-small: 16px;
-  --font-size-medium: 24px;
-  --font-size-large: 36px;
-
-  --color-secondary: white;
-  --bg-color-error: red;
-  --bg-color-primary: blue;
-  --bg-color-success: green;
-  --bg-color-locked: grey;
-  --bg-color-notice: grey;
+  width: 100%;
+  max-width: var(--max-width);
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.08);
+  padding: 32px;
 }
 
 h1 {
-  margin: 1em 0em;
+  margin: 0 0 8px;
+  font-weight: 700;
+  font-size: 28px;
+  color: #0b1221;
+}
+p {
+  margin: 0;
 }
 
-section {
+.free,
+.upgrades {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  margin: 16px 0px;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+  gap: 12px;
+  padding-top: 12px;
+  align-self: flex-start;
 }
 
-button {
-  font-size: var(--font-size-small);
-  padding: 8px;
+.free > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.day-title {
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.6px;
+
+  ~ div {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+#current-day {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.locked-days,
+.unlocked-days,
+button.upgrade {
+  padding: 10px 14px;
+  border-radius: 10px;
   border: none;
-  width: 200px;
-  cursor: pointer;
+  font-weight: 600;
 }
-
-.free {
-  .day-title {
-    padding-top: 24px;
-  }
-
-  .unlocked-days {
-    font-weight: 600;
-    color: var(--bg-color-primary);
-    font-size: var(--font-size-medium);
-  }
-
-  #current-day {
-    font-size: var(--font-size-large);
-  }
-
-  .locked-days {
-    background-color: var(--bg-color-locked);
-    border-radius: 4px;
-    color: var(--color-secondary);
-  }
-
-  dialog {
-    margin: 48px;
-    align-self: center;
-    justify-self: center;
-
-    .locked-feature {
-      font-size: var(--font-size-medium);
-      color: var(--bg-color-error);
-      text-align: center;
-    }
-
-    button {
-      margin-top: 16px;
-      background-color: var(--bg-color-primary);
-      border-radius: 4px;
-      width: 100%;
-      color: var(--color-secondary);
-      cursor: pointer;
-    }
-  }
+.locked-days {
+  cursor: pointer;
+  background: #c7d2fe;
+  color: #1e293b;
+}
+.unlocked-days {
+  background: transparent;
+  color: #0f172a;
+  border-radius: 0;
+  font-weight: 700;
 }
 
 .upgrades {
-  .upgrade {
-    margin-top: 16px;
-    background-color: var(--bg-color-success);
-    border-radius: 4px;
-    color: var(--color-secondary);
-  }
+  margin-top: 16px;
+  align-items: center;
+}
+button.upgrade {
+  background: var(--success);
+  color: white;
+  width: 100%;
+  max-width: 320px;
+}
+button.upgrade:hover {
+  filter: brightness(0.97);
+}
 
-  .upgrade-note {
-    font-size: 14px;
-    color: var(--bg-color-notice);
-    margin-top: 4px;
-  }
+.upgrade-note {
+  font-size: 13px;
+  color: var(--muted);
+}
+.error {
+  color: var(--error);
+  margin-top: 6px;
+}
 
-  .error {
-    color: var(--bg-color-error);
-    margin-top: 8px;
-  }
+dialog {
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.12);
+}
+dialog::backdrop {
+  background: linear-gradient(180deg, rgba(2, 6, 23, 0.3), rgba(2, 6, 23, 0.6));
+}
+dialog p {
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+dialog button {
+  background: var(--accent);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
 
 .hidden {
   display: none;
+}
+
+@media (min-width: 900px) {
+  main {
+    gap: 28px;
+    padding: 36px;
+  }
+  .upgrades {
+    width: 320px;
+  }
 }

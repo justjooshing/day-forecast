@@ -5,11 +5,11 @@
   <title>Day Forecast</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="module" defer src="initialise-page.js"></script>
-  <script type="module" defer src="handle-upgrade.js"></script>
-  <script type="module" defer src="handle-successful-payment.js"></script>
-  <script type="module" defer src="console.js"></script>
+  <script type="module" defer src="main.js"></script>
   <script src="https://js.stripe.com/v3/"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -18,15 +18,21 @@
     <h1>Day forecast</h1>
     <p>Your handy helper for knowing what day it is today</p>
     <section class="free">
-      <p class="day-title">Today is</p>
-      <p class="unlocked-days" id="current-day" />
-      <p class="day-title">Two day forecast</p>
-      <button class="locked-days">Locked &#x1F512;</button>
-      <button class="locked-days">Locked &#x1F512;</button>
-      <dialog>
-        <p class="locked-feature">This feature is locked. Please upgrade to premium to unlock a two day forecast!</p>
-        <button>Close</button>
-      </dialog>
+      <div>
+        <p class="day-title">Today is</p>
+        <p class="unlocked-days" id="current-day" />
+      </div>
+      <div>
+        <p class="day-title">Two day forecast</p>
+        <div>
+          <button class="locked-days">Locked &#x1F512;</button>
+          <button class="locked-days">Locked &#x1F512;</button>
+        </div>
+        <dialog>
+          <p class="locked-feature">This feature is locked. Please upgrade to premium to unlock a two day forecast!</p>
+          <button>Close</button>
+        </dialog>
+      </div>
     </section>
     <section class="upgrades">
       <p>Unlock a two day forecast for this session</p>

@@ -1,3 +1,5 @@
 packages:
   - 'server'
   - 'client'
+overrides:
+  undici: ">=7.30.1"
